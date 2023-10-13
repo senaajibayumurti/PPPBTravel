@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/registrasi_title"
+        android:text="Daftar"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:id="@+id/credentials_layout"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registrasi_title">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="E-Mail"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+
+            android:hint="contoh@mail.com"
+            android:id="@+id/email_txt"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Username"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+
+            android:id="@+id/username_txt"
+            android:hint="Buat Username Anda"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Password"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+
+            android:id="@+id/password_txt"
+            android:hint="Minimal 8 terdiri dari huruf dan angka"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Tanggal Lahir"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+
+            android:id="@+id/tanggal_lahir_button"
+            android:text="HH-BB-TTTT"
+
+            style="?android:editTextStyle"
+            />
+    </LinearLayout>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+
+        android:id="@+id/tnc_checkbox"
+
+        app:layout_constraintTop_toBottomOf="@id/credentials_layout"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tnc_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:text="By checking the box you agree to our Terms and Conditions."
+
+        app:layout_constraintTop_toBottomOf="@id/credentials_layout"
+        app:layout_constraintBottom_toBottomOf="@id/tnc_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tnc_checkbox" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
+        android:id="@+id/register_button"
+        android:text="Daftar"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

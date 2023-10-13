@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:orientation="vertical"
+    tools:context=".FourthActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Tanggal Lahir:"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
+        android:id="@+id/tanggal_rencana"
+        android:hint="HH-BB-TTTT"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
+        android:id="@+id/asal_spinner"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
+        android:id="@+id/tujuan_spinner"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
+        android:id="@+id/class_kereta_spinner"/>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/pesanan_tambahan"
+        android:text="Tambah Pesanan:"/>
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/pilihan_pesanan_tambahan">
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rowCount="2"
+            android:orientation="vertical">
+            <ToggleButton
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+
+                android:textAllCaps="false"
+                android:textOff="Makan Siang"
+                android:textOn="Makan Siang"/>
+            <ToggleButton
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+
+                android:textAllCaps="false"
+                android:textOff="Duduk Pinggir Jendala"
+                android:textOn="Duduk Pinggir Jendala"/>
+            <ToggleButton
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+
+                android:textAllCaps="false"
+                android:textOff="Duduk di Gerbong Depan"
+                android:textOn="Duduk di Gerbong Depan"/>
+            <ToggleButton
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+
+                android:textAllCaps="false"
+                android:textOff="Tidur di Lantai"
+                android:textOn="Tidur di Lantai"/>
+            <ToggleButton
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+
+                android:textAllCaps="false"
+                android:textOff="Gelantungan"
+                android:textOn="Gelantungan"/>
+            <ToggleButton
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+
+                android:textAllCaps="false"
+                android:textOff="Duduk di Atap Kereta"
+                android:textOn="Duduk di Atap Kereta"/>
+            <ToggleButton
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+
+                android:textAllCaps="false"
+                android:textOff="Jadi Masinis"
+                android:textOn="Jadi Masinis"/>
+        </GridLayout>
+    </HorizontalScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/price_and_dashboard_button">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Total Pesanan"
+
+            app:layout_constraintBottom_toTopOf="@id/dynamic_price"
+            app:layout_constraintStart_toStartOf="@id/price_and_dashboard_button"
+            app:layout_constraintEnd_toEndOf="@id/price_and_dashboard_button"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="56sp"
+
+            android:id="@+id/dynamic_price"
+
+            app:layout_constraintBottom_toTopOf="@id/book_button"
+            app:layout_constraintStart_toStartOf="@id/price_and_dashboard_button"
+            app:layout_constraintEnd_toEndOf="@id/price_and_dashboard_button" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/book_button"
+            android:text="Pesan Sekarang"
+
+            app:layout_constraintBottom_toBottomOf="@id/price_and_dashboard_button"
+            app:layout_constraintStart_toStartOf="@id/price_and_dashboard_button"
+            app:layout_constraintEnd_toEndOf="@id/price_and_dashboard_button"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
