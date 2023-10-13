@@ -1,5 +1,6 @@
 package com.example.pppbtravel
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -34,6 +35,8 @@ class ThirdActivity : AppCompatActivity() {
             paketPerjalananShow.text = rencanaKelas
             rencanaPerjalananButton.setOnClickListener {
                 startActivity(Intent(this@ThirdActivity, FourthActivity::class.java))
+                setResult(Activity.RESULT_OK, intent)
+                finish()
             }
             calendar.init(
                 calendar.year,

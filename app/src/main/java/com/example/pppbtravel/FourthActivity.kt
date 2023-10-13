@@ -1,5 +1,6 @@
 package com.example.pppbtravel
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -73,6 +74,7 @@ class FourthActivity : AppCompatActivity() {
                 intentToThirdActivity.putExtra(PLAN_DESTINATION, selectedTujuan)
                 intentToThirdActivity.putExtra(PLAN_CLASS, selectedKelas)
                 startActivity(intentToThirdActivity)
+                finish()
             }
         }
     }

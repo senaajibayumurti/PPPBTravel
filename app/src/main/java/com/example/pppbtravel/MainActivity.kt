@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
     private var selectedYear: Int = 0
     private val currentYear = calendar.get(Calendar.YEAR)
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -38,8 +37,8 @@ class MainActivity : AppCompatActivity() {
             showDatePicker()
         }
 
-        //Transfer Data
         with(binding) {
+            //Transfer Data
             registerButton.setOnClickListener {
                 if (usernameTxt.text.isEmpty()          ||
                     emailTxt.text.isEmpty()             ||
