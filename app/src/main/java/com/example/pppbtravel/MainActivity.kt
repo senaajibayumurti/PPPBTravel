@@ -22,6 +22,10 @@ class MainActivity : AppCompatActivity() {
         const val CREDENTIALS_USERNAME = "credentials_username"
         const val CREDENTIALS_PASSWORD = "credentials_password"
     }
+    //Ngambil tahun
+    private var selectedYear: Int = 0
+    private val currentYear = calendar.get(Calendar.YEAR)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,25 +41,32 @@ class MainActivity : AppCompatActivity() {
         //Transfer Data
         with(binding) {
             registerButton.setOnClickListener {
-                if (usernameTxt.text.isEmpty()  ||
-                    emailTxt.text.isEmpty()     ||
-                    passwordTxt.text.isEmpty()
+                if (usernameTxt.text.isEmpty()          ||
+                    emailTxt.text.isEmpty()             ||
+                    passwordTxt.text.isEmpty()          ||
+                    tanggalLahirButton.text.isEmpty()
                 ) {
                     val warningCredentials = "Please fill out the credentials."
                     Toast.makeText(this@MainActivity, warningCredentials, Toast.LENGTH_SHORT).show()
                 } else {
-                    if (tncCheckbox.isChecked) {
-                        val username = usernameTxt.text.toString()
-                        val password = passwordTxt.text.toString()
+                    if (currentYear - selectedYear < 15){
+                        val warningAge = "Kurang Tua lau"
+                        Toast.makeText(this@MainActivity, warningAge, Toast.LENGTH_SHORT).show()
+                    }
+                    else{
+                        if (tncCheckbox.isChecked) {
+                            val username = usernameTxt.text.toString()
+                            val password = passwordTxt.text.toString()
 
-                        val intentToSecondActivity =
-                            Intent(this@MainActivity, SecondActivity::class.java)
-                        intentToSecondActivity.putExtra(CREDENTIALS_USERNAME, username)
-                        intentToSecondActivity.putExtra(CREDENTIALS_PASSWORD, password)
-                        startActivity(intentToSecondActivity)
-                    } else {
-                        val warningTNC = "Please accept the Terms and Conditions."
-                        Toast.makeText(this@MainActivity, warningTNC, Toast.LENGTH_SHORT).show()
+                            val intentToSecondActivity =
+                                Intent(this@MainActivity, SecondActivity::class.java)
+                            intentToSecondActivity.putExtra(CREDENTIALS_USERNAME, username)
+                            intentToSecondActivity.putExtra(CREDENTIALS_PASSWORD, password)
+                            startActivity(intentToSecondActivity)
+                        } else {
+                            val warningTNC = "Please accept the Terms and Conditions."
+                            Toast.makeText(this@MainActivity, warningTNC, Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
             }
@@ -71,6 +82,9 @@ class MainActivity : AppCompatActivity() {
                 val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
                 val formattedDate = dateFormat.format(selectedDate.time)
                 binding.tanggalLahirButton.text = formattedDate
+
+                //Ngambil tahun
+                selectedYear = selectedDate.get(Calendar.YEAR)
             },
             calendar.get(Calendar.YEAR),
             calendar.get(Calendar.MONTH),

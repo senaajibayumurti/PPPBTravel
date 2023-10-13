@@ -11,14 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:text="Tanggal Lahir:"/>
+        android:text="Tanggal Lahir"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="48dp"
 
         android:id="@+id/tanggal_rencana"
-        android:hint="HH-BB-TTTT"
-        />
+        android:hint="HH-BB-TTTT"/>
+
+<!--        style="?android:editTextStyle"-->
 
     <Spinner
         android:layout_width="match_parent"
@@ -34,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
 
-        android:id="@+id/class_kereta_spinner"/>
+        android:id="@+id/kelas_kereta_spinner"/>
     
     <TextView
         android:layout_width="match_parent"

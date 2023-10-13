@@ -6,6 +6,33 @@
     android:layout_height="match_parent"
     android:padding="24dp"
     tools:context=".ThirdActivity">
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/calendar_carView"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <DatePicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/calendar"
+            android:datePickerMode="calendar"
+            />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/rencana_perjalanan_txt"
+        android:text="Rencana Perjalanan Terakhir:"
+
+        app:layout_constraintTop_toBottomOf="@id/calendar_carView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +41,7 @@
 
         android:id="@+id/latest_booked_1"
 
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rencana_perjalanan_txt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <LinearLayout
@@ -88,24 +115,6 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:id="@+id/calendar_carView"
-
-        app:layout_constraintTop_toBottomOf="@id/latest_booked_1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/rencana_perjalanan_button">
-        <DatePicker
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:id="@+id/calendar"
-            android:datePickerMode="calendar"
-            />
-    </androidx.cardview.widget.CardView>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

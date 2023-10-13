@@ -73,10 +73,10 @@
             android:layout_height="48dp"
 
             android:id="@+id/tanggal_lahir_button"
-            android:text="HH-BB-TTTT"
+            android:hint="HH-BB-TTTT"/>
 
-            style="?android:editTextStyle"
-            />
+<!--            style="?android:editTextStyle"-->
+
     </LinearLayout>
     <CheckBox
         android:layout_width="wrap_content"

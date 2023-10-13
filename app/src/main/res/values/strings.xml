@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">PPPBTravel</string>
+    <array name="destination">
+        <item>Stasiun Tugu, Sleman</item>
+        <item>Stasiun Wonosobo, Wonosobo</item>
+        <item>Stasiun Cukir, Ndhiwek</item>
+        <item>Stasiu Nambo, Jonggol</item>
+    </array>
+    <array name="kelas">
+        <item>Ekonomi</item>
+        <item>Bisnis</item>
+        <item>Eksekutif</item>
+        <item>Luxury</item>
+    </array>
 </resources>

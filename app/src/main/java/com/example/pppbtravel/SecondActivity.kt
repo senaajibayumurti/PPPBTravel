@@ -3,7 +3,6 @@ package com.example.pppbtravel
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.EditText
 import android.widget.Toast
 import com.example.pppbtravel.databinding.ActivitySecondBinding
 import com.example.pppbtravel.MainActivity.Companion.CREDENTIALS_USERNAME
@@ -28,7 +27,7 @@ class SecondActivity : AppCompatActivity() {
                 val username = usernameTxt.text.toString()
                 val password = passwordTxt.text.toString()
 
-                if (username == userUsername || password == userPassword ){
+                if (username == userUsername && password == userPassword ){
                     startActivity(Intent(this@SecondActivity, ThirdActivity::class.java))
                 }
                 else{
