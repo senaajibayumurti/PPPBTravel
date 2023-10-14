@@ -1,6 +1,5 @@
 package com.example.pppbtravel
 
-import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +8,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.CompoundButton
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
@@ -17,16 +17,21 @@ import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+import android.widget.Switch
 
 class FourthActivity : AppCompatActivity() {
     private lateinit var binding:ActivityFourthBinding
     private var from = R.array.from
     private var destination = R.array.destination
     private var kelasKereta = R.array.kelas
+    private var hargaDef = 0.0
+    private var hargaSementara = 0.0
+    private var hargaPesanan = 0.0
+
     //Date Picker
     private val calendar = Calendar.getInstance()
 
-    // Default Harga Dinamis
+    // Formatting harga ke Rp
     val format = NumberFormat.getCurrencyInstance(Locale("id", "ID"))
 
     companion object{
@@ -40,6 +45,17 @@ class FourthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFourthBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        // Buat ngitung switch
+        val switches = arrayOf(
+            findViewById<Switch>(R.id.switch_tambahan_1),
+            findViewById<Switch>(R.id.switch_tambahan_2),
+            findViewById<Switch>(R.id.switch_tambahan_3),
+            findViewById<Switch>(R.id.switch_tambahan_4),
+            findViewById<Switch>(R.id.switch_tambahan_5),
+            findViewById<Switch>(R.id.switch_tambahan_6),
+            findViewById<Switch>(R.id.switch_tambahan_7),
+            findViewById<Switch>(R.id.switch_tambahan_8)
+        )
 
         //Menyembunyikan Kelas
         val hidingSpinner =findViewById<Spinner>(R.id.kelas_kereta_spinner)
@@ -50,6 +66,10 @@ class FourthActivity : AppCompatActivity() {
         tanggalRencana.setOnClickListener() {
             showDatePicker()
         }
+
+        // Hitung jumlah switch yang aktif
+        var jumlahSwitchAktif = 0
+        var hargaJumlahSwitchAktif = jumlahSwitchAktif * 10.000
 
         with(binding){
             //SetUp Spinner Asal
@@ -92,25 +112,30 @@ class FourthActivity : AppCompatActivity() {
                     if (position == 0) {
                         val textView = view as? TextView
                         textView?.setTextColor(resources.getColor(R.color.grey))
-                        val hargaNull = 0.0
-                        updateHargaDinamis(hargaNull)
+                        hargaPesanan = hargaDef
+                        updateHargaDinamis()
                     } else if (selectedAsal == selectedTujuan) {
                         Toast.makeText(this@FourthActivity, "Ada kesalahan pemesanan, cuy", Toast.LENGTH_SHORT).show()
+                        hargaPesanan = hargaDef
+                        updateHargaDinamis()
                     } else {
                         val textView = view as? TextView
                         textView?.setTextColor(resources.getColor(android.R.color.black))
 
                         if (hargaPasangan != null){
-                            if (position == 1){
-                                updateHargaDinamis(hargaPasangan)
+                            if (position == 1 && kelasKeretaSpinner.selectedItemPosition != 0){
+                                hargaPemesanan(hargaPasangan)
+                                updateHargaDinamis()
                             }
-                            else if (position == 2){
+                            else if (position == 2 && kelasKeretaSpinner.selectedItemPosition != 0){
                                 var hargaBisnis = hargaPasangan * 1.5
-                                updateHargaDinamis(hargaBisnis)
+                                hargaPemesanan(hargaBisnis)
+                                updateHargaDinamis()
                             }
-                            else{
+                            else if (position == 3 && kelasKeretaSpinner.selectedItemPosition != 0){
                                 var hargaEksekutif = hargaPasangan * 2.0
-                                updateHargaDinamis(hargaEksekutif)
+                                hargaPemesanan(hargaEksekutif)
+                                updateHargaDinamis()
                             }
                         }
                     }
@@ -132,9 +157,12 @@ class FourthActivity : AppCompatActivity() {
                         val textView = view as? TextView
                         textView?.setTextColor(resources.getColor(R.color.grey))
                         val hargaNull = 0.0
-                        updateHargaDinamis(hargaNull)
+                        hargaPesanan = hargaDef
+                        updateHargaDinamis()
                     } else if (selectedAsal == selectedTujuan) {
                         Toast.makeText(this@FourthActivity, "Ada kesalahan pemesanan, cuy", Toast.LENGTH_SHORT).show()
+                        hargaPesanan = hargaDef
+                        updateHargaDinamis()
                     } else {
                         val textView = view as? TextView
                         textView?.setTextColor(resources.getColor(android.R.color.black))
@@ -143,16 +171,19 @@ class FourthActivity : AppCompatActivity() {
                         hidingSpinner.visibility = View.VISIBLE
 
                         if (hargaPasangan != null){
-                            if (position == 1){
-                                updateHargaDinamis(hargaPasangan)
+                            if (position == 1 && kelasKeretaSpinner.selectedItemPosition != 0){
+                                hargaPemesanan(hargaPasangan)
+                                updateHargaDinamis()
                             }
-                            else if (position == 2){
+                            else if (position == 2 && kelasKeretaSpinner.selectedItemPosition != 0){
                                 var hargaBisnis = hargaPasangan * 1.5
-                                updateHargaDinamis(hargaBisnis)
+                                hargaPemesanan(hargaBisnis)
+                                updateHargaDinamis()
                             }
-                            else{
+                            else if (position == 3 && kelasKeretaSpinner.selectedItemPosition != 0){
                                 var hargaEksekutif = hargaPasangan * 2.0
-                                updateHargaDinamis(hargaEksekutif)
+                                hargaPemesanan(hargaEksekutif)
+                                updateHargaDinamis()
                             }
                         }
                     }
@@ -173,23 +204,26 @@ class FourthActivity : AppCompatActivity() {
                     if (position == 0) {
                         val textView = view as? TextView
                         textView?.setTextColor(resources.getColor(R.color.grey))
-                        val hargaNull = 0.0
-                        updateHargaDinamis(hargaNull)
+                        hargaPesanan = hargaDef
+                        updateHargaDinamis()
                     } else {
                         val textView = view as? TextView
                         textView?.setTextColor(resources.getColor(android.R.color.black))
 
                         if (hargaPasangan != null){
                             if (position == 1){
-                                updateHargaDinamis(hargaPasangan)
+                                hargaPemesanan(hargaPasangan)
+                                updateHargaDinamis()
                             }
                             else if (position == 2){
                                 var hargaBisnis = hargaPasangan * 1.5
-                                updateHargaDinamis(hargaBisnis)
+                                hargaPemesanan(hargaBisnis)
+                                updateHargaDinamis()
                             }
                             else{
                                 var hargaEksekutif = hargaPasangan * 2.0
-                                updateHargaDinamis(hargaEksekutif)
+                                hargaPemesanan(hargaEksekutif)
+                                updateHargaDinamis()
                             }
                         }
                         else {
@@ -202,6 +236,24 @@ class FourthActivity : AppCompatActivity() {
                     // Nothing to do here
                 }
             })
+
+            // Event ketika ada switch yang berubah
+            val switchListener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    jumlahSwitchAktif++
+                    Toast.makeText(this@FourthActivity, "${jumlahSwitchAktif}, ${hargaJumlahSwitchAktif}, ${hargaSementara}, ${hargaPesanan}", Toast.LENGTH_SHORT).show()
+                } else {
+                    jumlahSwitchAktif--
+                    Toast.makeText(this@FourthActivity, "${jumlahSwitchAktif}, ${hargaJumlahSwitchAktif}, ${hargaSementara}, ${hargaPesanan}", Toast.LENGTH_SHORT).show()
+                }
+                tambahHargaDinamis(jumlahSwitchAktif * 10000.0)
+                updateHargaDinamis()
+            }
+
+            for (switch in switches) {
+                switch.setOnCheckedChangeListener(switchListener)
+            }
+
 
             bookButton.setOnClickListener {
                 //Mengambil nilai
@@ -246,7 +298,14 @@ class FourthActivity : AppCompatActivity() {
         )
         datePickerDialog.show()
     }
-    private fun updateHargaDinamis(harga: Double){
-        binding.dynamicPrice.text = (format.format(harga)).toString()
+    private fun updateHargaDinamis(){
+        var hargaDinamis = hargaPesanan + hargaSementara
+        binding.dynamicPrice.text = (format.format(hargaDinamis)).toString()
+    }
+    private fun hargaPemesanan(harga: Double){
+        hargaPesanan = harga
+    }
+    private fun tambahHargaDinamis(harga: Double){
+        hargaSementara = harga
     }
 }

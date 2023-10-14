@@ -70,6 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    android:id="@+id/switch_tambahan_1"
                     android:layout_alignParentBottom="true"/>
             </RelativeLayout>
             <RelativeLayout
@@ -90,6 +91,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    android:id="@+id/switch_tambahan_2"
                     android:layout_alignParentBottom="true"/>
             </RelativeLayout>
             <RelativeLayout
@@ -110,6 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    android:id="@+id/switch_tambahan_3"
                     android:layout_alignParentBottom="true"/>
             </RelativeLayout>
             <RelativeLayout
@@ -130,6 +133,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    android:id="@+id/switch_tambahan_4"
                     android:layout_alignParentBottom="true"/>
             </RelativeLayout>
             <RelativeLayout
@@ -150,6 +154,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    android:id="@+id/switch_tambahan_5"
                     android:layout_alignParentBottom="true"/>
             </RelativeLayout>
             <RelativeLayout
@@ -170,6 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    android:id="@+id/switch_tambahan_6"
                     android:layout_alignParentBottom="true"/>
             </RelativeLayout>
             <RelativeLayout
@@ -190,6 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    android:id="@+id/switch_tambahan_7"
                     android:layout_alignParentBottom="true"/>
             </RelativeLayout>
             <RelativeLayout
@@ -210,6 +217,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    android:id="@+id/switch_tambahan_8"
                     android:layout_alignParentBottom="true"/>
             </RelativeLayout>
         </LinearLayout>
