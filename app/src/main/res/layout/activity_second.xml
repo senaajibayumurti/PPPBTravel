@@ -17,8 +17,7 @@
         android:id="@+id/login_title"
         android:text="Masuk"
         android:textSize="24sp"
-        android:background="@color/blue1"
-        android:textColor="@color/black"
+        android:textColor="@color/blue2"
         android:padding="8dp"
         android:gravity="center_horizontal"
 
