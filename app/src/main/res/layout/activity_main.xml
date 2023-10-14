@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
-    android:background="@drawable/travelakuy_background3"
+    android:background="@drawable/travelakuy_backgroundd"
     tools:context=".MainActivity">
 
     <TextView

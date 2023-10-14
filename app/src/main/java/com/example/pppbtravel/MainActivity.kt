@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this@MainActivity, warningCredentials, Toast.LENGTH_SHORT).show()
                 } else {
                     if (currentYear - selectedYear < 15){
-                        val warningAge = "Kurang Tua lau"
+                        val warningAge = "Maaf umur anda tidak mencukupi."
                         Toast.makeText(this@MainActivity, warningAge, Toast.LENGTH_SHORT).show()
                     }
                     else{

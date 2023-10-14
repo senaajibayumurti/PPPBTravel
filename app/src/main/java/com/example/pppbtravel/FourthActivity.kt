@@ -69,7 +69,6 @@ class FourthActivity : AppCompatActivity() {
 
         // Hitung jumlah switch yang aktif
         var jumlahSwitchAktif = 0
-        var hargaJumlahSwitchAktif = jumlahSwitchAktif * 10.000
 
         with(binding){
             //SetUp Spinner Asal
