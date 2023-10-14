@@ -20,9 +20,6 @@ class SecondActivity : AppCompatActivity() {
             val userUsername = intent.getStringExtra(CREDENTIALS_USERNAME)
             val userPassword = intent.getStringExtra(CREDENTIALS_PASSWORD)
 
-            testText.text = "Afakah muncul ${userUsername}"
-            testText2.text = "Afakah muncul ${userPassword}"
-
             loginButton.setOnClickListener {
                 val username = usernameTxt.text.toString()
                 val password = passwordTxt.text.toString()

@@ -241,10 +241,10 @@ class FourthActivity : AppCompatActivity() {
             val switchListener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked) {
                     jumlahSwitchAktif++
-                    Toast.makeText(this@FourthActivity, "${jumlahSwitchAktif}, ${hargaJumlahSwitchAktif}, ${hargaSementara}, ${hargaPesanan}", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this@FourthActivity, "${jumlahSwitchAktif}, ${hargaJumlahSwitchAktif}, ${hargaSementara}, ${hargaPesanan}", Toast.LENGTH_SHORT).show()
                 } else {
                     jumlahSwitchAktif--
-                    Toast.makeText(this@FourthActivity, "${jumlahSwitchAktif}, ${hargaJumlahSwitchAktif}, ${hargaSementara}, ${hargaPesanan}", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this@FourthActivity, "${jumlahSwitchAktif}, ${hargaJumlahSwitchAktif}, ${hargaSementara}, ${hargaPesanan}", Toast.LENGTH_SHORT).show()
                 }
                 tambahHargaDinamis(jumlahSwitchAktif * 10000.0)
                 updateHargaDinamis()

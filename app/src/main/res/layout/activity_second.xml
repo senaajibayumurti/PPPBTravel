@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
+    android:background="@drawable/travelakuy_background"
     tools:context=".SecondActivity">
 
 
@@ -15,14 +16,21 @@
 
         android:id="@+id/login_title"
         android:text="Masuk"
+        android:textSize="24sp"
+        android:background="@color/blue1"
+        android:textColor="@color/black"
+        android:padding="8dp"
+        android:gravity="center_horizontal"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@drawable/rounded_background"
 
         android:id="@+id/credentials_layout"
 
@@ -34,35 +42,38 @@
             android:layout_height="wrap_content"
 
             android:text="Username"/>
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/form_background"
 
-            android:id="@+id/username_txt"
-            android:hint="Your Username"
-            />
+                android:id="@+id/username_txt"
+                android:inputType="text"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:text="Password"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
 
-            android:id="@+id/password_txt"
-            android:hint="Minimal 8 letters and numbers"
-            />
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
 
-            android:id="@+id/test_text"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/form_background"
 
-            android:id="@+id/test_text2"/>
+                android:id="@+id/password_txt"
+                android:inputType="textPassword"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
     <Button
@@ -71,6 +82,8 @@
 
         android:id="@+id/login_button"
         android:text="Masuk"
+        android:backgroundTint="@color/blue0"
+        android:textColor="@color/blue2"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -5,14 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
+    android:background="@drawable/travelakuy_background2"
     tools:context=".ThirdActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/title_dashboard"
+        android:text="Dashboard"
+        android:textSize="24sp"
+        android:background="@color/blue2"
+        android:textColor="@color/white"
+        android:padding="8dp"
+        android:gravity="center_horizontal"/>
+
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
 
         android:id="@+id/calendar_carView"
 
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_dashboard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <DatePicker
@@ -121,6 +134,8 @@
 
         android:id="@+id/rencana_perjalanan_button"
         android:text="Rencanakan Perjalanan"
+        android:backgroundTint="@color/blue0"
+        android:textColor="@color/blue2"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
