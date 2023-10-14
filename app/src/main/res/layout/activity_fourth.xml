@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
 
-        android:id="@+id/kelas_kereta_spinner"/>
+        android:id="@+id/kelas_kereta_spinner" />
     
     <TextView
         android:layout_width="match_parent"
@@ -48,61 +48,171 @@
         android:layout_height="wrap_content"
 
         android:id="@+id/pilihan_pesanan_tambahan">
-        <GridLayout
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:rowCount="2"
-            android:orientation="vertical">
-            <ToggleButton
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:padding="16dp"
 
-                android:textAllCaps="false"
-                android:textOff="Makan Siang"
-                android:textOn="Makan Siang"/>
-            <ToggleButton
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
+                android:id="@+id/box_1"
+                android:background="@drawable/rounded_background">
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="72dp"
 
-                android:textAllCaps="false"
-                android:textOff="Duduk Pinggir Jendala"
-                android:textOn="Duduk Pinggir Jendala"/>
-            <ToggleButton
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
+                    android:id="@+id/tambahan_1"
+                    android:text="Makan Siang"
+                    android:textSize="24sp"/>
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-                android:textAllCaps="false"
-                android:textOff="Duduk di Gerbong Depan"
-                android:textOn="Duduk di Gerbong Depan"/>
-            <ToggleButton
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:padding="16dp"
 
-                android:textAllCaps="false"
-                android:textOff="Tidur di Lantai"
-                android:textOn="Tidur di Lantai"/>
-            <ToggleButton
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
+                android:id="@+id/box_2"
+                android:background="@drawable/rounded_background">
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="72dp"
 
-                android:textAllCaps="false"
-                android:textOff="Gelantungan"
-                android:textOn="Gelantungan"/>
-            <ToggleButton
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
+                    android:id="@+id/tambahan_2"
+                    android:text="Duduk Pinggir Jendela"
+                    android:textSize="24sp"/>
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-                android:textAllCaps="false"
-                android:textOff="Duduk di Atap Kereta"
-                android:textOn="Duduk di Atap Kereta"/>
-            <ToggleButton
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:padding="16dp"
 
-                android:textAllCaps="false"
-                android:textOff="Jadi Masinis"
-                android:textOn="Jadi Masinis"/>
-        </GridLayout>
+                android:id="@+id/box_3"
+                android:background="@drawable/rounded_background">
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="72dp"
+
+                    android:id="@+id/tambahan_3"
+                    android:text="Baris Depan"
+                    android:textSize="24sp"/>
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:padding="16dp"
+
+                android:id="@+id/box_4"
+                android:background="@drawable/rounded_background">
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="72dp"
+
+                    android:id="@+id/tambahan_4"
+                    android:text="Baris Belakang"
+                    android:textSize="24sp"/>
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:padding="16dp"
+
+                android:id="@+id/box_5"
+                android:background="@drawable/rounded_background">
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="72dp"
+
+                    android:id="@+id/tambahan_5"
+                    android:text="Gerbong Depan"
+                    android:textSize="24sp"/>
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:padding="16dp"
+
+                android:id="@+id/box_6"
+                android:background="@drawable/rounded_background">
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="72dp"
+
+                    android:id="@+id/tambahan_6"
+                    android:text="Berbing Belakang"
+                    android:textSize="24sp"/>
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:padding="16dp"
+
+                android:id="@+id/box_7"
+                android:background="@drawable/rounded_background">
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="72dp"
+
+                    android:id="@+id/tambahan_7"
+                    android:text="Duduk di Atap"
+                    android:textSize="24sp"/>
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:padding="16dp"
+
+                android:id="@+id/box_8"
+                android:background="@drawable/rounded_background">
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="72dp"
+
+                    android:id="@+id/tambahan_8"
+                    android:text="Gelantungan"
+                    android:textSize="24sp"/>
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+        </LinearLayout>
     </HorizontalScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
